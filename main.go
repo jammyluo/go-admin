@@ -12,6 +12,7 @@ import (
 	"go-admin/ctrl/menu"
 	"go-admin/ctrl/role"
 	"go-admin/ctrl/user"
+	"go-admin/ctrl/goods"
 	_ "go-admin/docs"
 	"go-admin/models"
 	"go-admin/modules/cache"
@@ -60,6 +61,7 @@ func main() {
 	r.POST("/logout", user.Logout)
 	r.POST("/login", user.Login)
 	r.POST("/reg", user.Reg)
+	r.GET("/goods/list",goods.List)
 	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
