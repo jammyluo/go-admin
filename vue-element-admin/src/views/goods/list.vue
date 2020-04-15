@@ -1,11 +1,16 @@
 <template>
   <div class="app-container">
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
-      <el-table-column align="center" label="操作" width="100">
+      <el-table-column align="center" label="转链" width="140">
         <template slot-scope="scope">
-          <router-link :to="'/shopcar/add/'+scope.row.id">
+          <router-link :to="'/goods/genwxlink/'+scope.row.id">
             <el-button type="primary" size="small">
-              加入
+              微信
+            </el-button>
+          </router-link>
+          <router-link :to="'/goods/genqqlink/'+scope.row.id">
+            <el-button type="primary" size="small">
+              QQ
             </el-button>
           </router-link>
         </template>
@@ -13,7 +18,7 @@
       <el-table-column align="center" label="图片" width="110">
         <template slot-scope="{row}">
           <a target="_blank" :href=row.itemLink >
-            <img :src="row.marketingMainPic" width="80" height="80">
+            <img :src="row.mainPic" width="80" height="80">
           </a>
         </template>   
       </el-table-column>
@@ -37,9 +42,15 @@
           <span>{{ scope.row.originalPrice }}</span>
         </template>
       </el-table-column>
+
       <el-table-column align="center" label="折扣价" width="80">
         <template slot-scope="scope">
           <span>{{ scope.row.actualPrice }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column align="center" label="佣金" width="100">
+        <template slot-scope="scope">
+          <span>{{ scope.row.actualPrice * scope.row.commissionRate / 100 }} ({{scope.row.commissionRate}}%)</span>
         </template>
       </el-table-column>
       <el-table-column align="center" label="优惠券" width="100">

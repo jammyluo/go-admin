@@ -13,6 +13,7 @@ require (
 	github.com/go-xorm/xorm v0.7.9
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/json-iterator/go v1.1.8 // indirect
+	github.com/kirinlabs/HttpRequest v1.0.5
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/mailru/easyjson v0.7.0 // indirect
 	github.com/mattn/go-isatty v0.0.10 // indirect

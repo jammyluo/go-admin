@@ -1,41 +1,22 @@
 import request from '@/utils/request'
+import { httphost } from '@/utils/global'
 
 export function fetchList(query) {
   return request({
+    baseURL: httphost,
     url: '/goods/list',
     method: 'get',
     params: query
   })
 }
 
-export function fetchGoods(id) {
+
+export function genQQLink(id) {
   return request({
-    url: '/goods/detail',
+    baseURL: httphost,
+    url: '/goods/genqqlink',
     method: 'get',
     params: { id }
   })
 }
 
-export function fetchPv(pv) {
-  return request({
-    url: '/goods/pv',
-    method: 'get',
-    params: { pv }
-  })
-}
-
-export function createGoods(data) {
-  return request({
-    url: '/goods/create',
-    method: 'post',
-    data
-  })
-}
-
-export function updateGoods(data) {
-  return request({
-    url: '/goods/update',
-    method: 'post',
-    data
-  })
-}

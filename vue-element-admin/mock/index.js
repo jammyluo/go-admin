@@ -11,8 +11,8 @@ const mocks = [
   ...user,
   ...role,
   ...article,
-  ...search,
-  ...goods
+  ...goods,
+  ...search
 ]
 
 // for front mock

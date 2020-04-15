@@ -5,6 +5,6 @@ package conf
 var Redis = map[string]string{
 	"name":    "redis",
 	"type":    "tcp",
-	"address": "172.17.0.4:6379",
+	"address": "172.17.0.3:6379",
 	"auth":    "",
 }
